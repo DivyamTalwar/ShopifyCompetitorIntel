@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+pydantic
+httpx
+firecrawl-py
+langchain
+langgraph
+langchain-google-genai
+sqlalchemy
+pymysql
+beautifulsoup4
+google-api-python-client
