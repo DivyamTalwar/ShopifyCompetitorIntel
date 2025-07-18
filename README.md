@@ -1,46 +1,33 @@
-# Hi there, I'm Divyam Talwar 👋
+# Shopify Insights Fetcher
 
-**Founding AI Engineer | Architecting the Future of Autonomous Systems**
+This application fetches insights from Shopify stores, including product catalogs, policies, and contact information. It also performs competitor analysis and saves all data to a MySQL database.
 
-I architect and build production-grade, multi-agent AI systems from scratch. My core expertise is in engineering stateful, fault-tolerant reasoning engines (99.5% uptime) using `LangGraph` and orchestrating them to tackle real-world challenges in FinTech and HR-Tech. From the agent's core logic to high-performance `FastAPI` backends, I own the full stack.
+## Setup
 
-**Contact:**
-- [LinkedIn](https://linkedin.com/in/divyam-talwar)
-- [GitHub](https://github.com/DivyamTalwar)
-- [Email](mailto:divyamtalwar.ai@gmail.com)
-- [Discord](https://discord.gg/theDream4756)
+1.  **Install dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
 
----
+2.  **Create a `.env` file** in the root directory and add the following environment variables:
 
-### 🚀 Featured Projects
+    ```
+    FIRECRRAWL_API_KEY="YOUR_FIRECRRAWL_API_KEY"
+    GEMINI_API_KEY="YOUR_GEMINI_API_KEY"
+    DATABASE_URL="mysql+pymysql://user:password@host/db_name"
+    GOOGLE_API_KEY="YOUR_GOOGLE_API_KEY"
+    GOOGLE_CSE_ID="YOUR_GOOGLE_CSE_ID"
+    ```
 
-- **NextGen-Trader: Autonomous AI Hedge Fund**
-  - An elite 15-agent ensemble where each AI embodies a unique financial titan’s philosophy. It uses a hybrid intelligence core to execute quant models and LLM reasoning, achieving a 15% higher risk-adjusted return in backtesting and reducing analysis time from hours to under 5 minutes.
-  - **Tech:** LangGraph, Python, FastAPI, PyTorch
-  - **Link:** [GitHub Repository](https://github.com/DivyamTalwar/NextGen-Trader)
+    -   `FIRECRRAWL_API_KEY`: Your API key for the Firecrawl service.
+    -   `GEMINI_API_KEY`: Your API key for the Google Generative AI service.
+    -   `DATABASE_URL`: The connection string for your MySQL database.
+    -   `GOOGLE_API_KEY`: Your API key for the Google Custom Search API.
+    -   `GOOGLE_CSE_ID`: Your Custom Search Engine ID.
 
-- **RecruitX: Intelligent Hiring Platform**
-  - An AI-powered platform with a proprietary Explainable AI (XAI) scoring system that improves candidate match quality by 50%. Features a per-candidate RAG system with a 'Chat with Resume' function, slashing recruiter screening time by 60%.
-  - **Tech:** Python, Streamlit, FAISS, MongoDB
-  - **Link:** [GitHub Repository](https://github.com/DivyamTalwar/RecruitX)
+## Running the Application
 
----
+Once the setup is complete, you can run the application with the following command:
 
-### 💻 My Tech Stack
-
-- **Languages & Core:** Python, C++, SQL
-- **Backend & Frameworks:** FastAPI, Flask, Streamlit
-- **AI / ML Engineering:** PyTorch, TensorFlow, Scikit-Learn, HuggingFace Transformers, Pandas, NumPy, NLP, PEFT (LoRa/QLoRa)
-- **Agentic AI & LLM Orchestration:** LangChain, LangGraph, CrewAI, RAG, LangSmith, LangServe, FastMCP
-- **Databases & Vector Stores:** Redis, Pinecone, FAISS, ChromaDB
-- **Cloud & MLOps:** AWS, Docker, Kubernetes, CI/CD, MLflow, BentoML
-
----
-
-### 🎯 Core Focus
-
-- **Currently Building:** Architecting multi-tool autonomous financial agents and an intelligent talent platform.
-- **Open to Collaboration On:** Complex agentic workflows, LLM-powered financial modeling, LangGraph, and Explainable AI (XAI).
-- **Learning:** Advanced fine-tuning (`PEFT`, `QLoRa`) and MLOps best practices (`MLflow`, `BentoML`).
-- **Let's Talk About:** Architecting stateful AI agents with `LangGraph`, production-ready RAG systems, `FastAPI` backends, and Explainable AI (XAI).
-- **Fun Fact:** I once led a 60+ person team to organize my university's E-Summit, directly helping 12+ student startups secure over **$600k (₹5 Crore)** in funding.
+```bash
+uvicorn app.main:app --reload
